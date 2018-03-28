@@ -160,11 +160,12 @@ colormap jet;
 cLim = [min(min(Utk)),max(max(Utk))];
 figure
 for i= 1:length(tTK)
+    clf
     patch([ptTK(:,1);ptTK(1,1)],[ptTK(:,2);ptTK(1,2)],...
         [ptTK(:,3);ptTK(1,3)],[Utk(:,i);Utk(1,i)],'FaceColor','none',...
         'EdgeColor','interp');
     caxis(cLim);
     colormap jet;
-    pause(0.05)
-    drawnow;
+    pause(0.1)
+    hold on
 end 
